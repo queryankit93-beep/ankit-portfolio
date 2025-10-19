@@ -1,0 +1,645 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ankit Kumar Singh - Full Stack Developer | Portfolio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <link rel="stylesheet" href="css/chatbot.css">
+</head>
+<body>
+    <!-- Animated Background -->
+    <div class="animated-bg">
+        <div class="floating-shapes">
+            <div class="shape shape-1"></div>
+            <div class="shape shape-2"></div>
+            <div class="shape shape-3"></div>
+            <div class="shape shape-4"></div>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <div class="logo-icon">
+                    <i class="fas fa-code"></i>
+                </div>
+                <h2>Ankit Kumar Singh</h2>
+            </div>
+            <div class="nav-menu">
+                <a href="#home" class="nav-link active">Home</a>
+                <a href="#about" class="nav-link">About</a>
+                <a href="#skills" class="nav-link">Skills</a>
+                <a href="#experience" class="nav-link">Experience</a>
+                <a href="#projects" class="nav-link">Projects</a>
+                <a href="#certificates" class="nav-link">Certificates</a>
+                <a href="#education" class="nav-link">Education</a>
+                <a href="#contact" class="nav-link">Contact</a>
+                <a href="recruiter-view.html" class="nav-link recruiter-btn">
+                    <i class="fas fa-eye"></i> Recruiter View
+                </a>
+                <a href="login.html" class="nav-link admin-btn">
+                    <i class="fas fa-lock"></i> Admin
+                </a>
+            </div>
+            <div class="nav-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <div class="badge">Available for Opportunities</div>
+                    <h1 class="hero-title">
+                        <span class="text-gradient">Ankit Kumar Singh</span>
+                    </h1>
+                    <h2 class="hero-subtitle">Full Stack Developer & Problem Solver</h2>
+                    <p class="hero-description">
+                        Passionate developer with 1+ years of experience building scalable web applications. 
+                        Specialized in JavaScript, React, Node.js, and modern cloud technologies. 
+                        Transforming ideas into digital reality.
+                    </p>
+                    <div class="hero-buttons">
+                        <button class="btn btn-primary" onclick="downloadResume()">
+                            <i class="fas fa-download"></i> Download Resume
+                        </button>
+                        <button class="btn btn-outline view-resume-btn" onclick="viewResume()">
+                            <i class="fas fa-eye"></i> View Resume
+                        </button>
+                        <button class="btn btn-secondary" onclick="scrollToSection('contact')">
+                            <i class="fas fa-paper-plane"></i> Get In Touch
+                        </button>
+                        <button class="btn btn-outline" onclick="scrollToSection('projects')">
+                            <i class="fas fa-rocket"></i> View Projects
+                        </button>
+                    </div>
+                    <div class="hero-stats">
+                        <div class="stat">
+                            <div class="stat-number" data-count="1">0</div>
+                            <div class="stat-label">Years Experience</div>
+                        </div>
+                        <div class="stat">
+                            <div class="stat-number" data-count="50">0</div>
+                            <div class="stat-label">Projects Completed</div>
+                        </div>
+                        <div class="stat">
+                            <div class="stat-number" data-count="25">0</div>
+                            <div class="stat-label">Happy Clients</div>
+                        </div>
+                        <div class="stat">
+                            <div class="stat-number" data-count="15">0</div>
+                            <div class="stat-label">Certifications</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="hero-image">
+                    <div class="image-container">
+                        <img src="ankit.jpg" alt="Ankit Kumar Singh" id="profile-image" class="profile-img">
+                        <div class="image-overlay">
+                            <div class="status-indicator">
+                                <div class="status-dot"></div>
+                                <span>Available for work</span>
+                            </div>
+                        </div>
+                        <div class="floating-tech">
+                            <div class="tech-icon"><i class="fab fa-react"></i></div>
+                            <div class="tech-icon"><i class="fab fa-node-js"></i></div>
+                            <div class="tech-icon"><i class="fab fa-js"></i></div>
+                            <div class="tech-icon"><i class="fab fa-python"></i></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="scroll-indicator">
+                <div class="scroll-line"></div>
+                <span>Scroll Down</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">About Me</h2>
+                <p class="section-subtitle">Get to know me better</p>
+            </div>
+            <div class="about-content">
+                <div class="about-image">
+                    <img src="ankit.jpg" alt="About Ankit Kumar Singh" id="about-image">
+                    <div class="experience-badge">
+                        <span>1+ Years</span>
+                        <small>Experience</small>
+                    </div>
+                </div>
+                <div class="about-text">
+                    <h3>Hello! I'm Ankit Kumar Singh</h3>
+                    <p id="profile-bio">
+                        Passionate Full Stack Developer with extensive experience in modern web technologies. 
+                        I specialize in creating responsive, user-friendly applications that solve real-world problems.
+                    </p>
+                    <div class="personal-info">
+                        <div class="info-grid">
+                            <div class="info-item">
+                                <i class="fas fa-user"></i>
+                                <div>
+                                    <strong>Name:</strong>
+                                    <span id="profile-name">Ankit Kumar Singh</span>
+                                </div>
+                            </div>
+                            <div class="info-item">
+                                <i class="fas fa-envelope"></i>
+                                <div>
+                                    <strong>Email:</strong>
+                                    <span id="profile-email">queryankit93@gmail.com</span>
+                                </div>
+                            </div>
+                            <div class="info-item">
+                                <i class="fas fa-phone"></i>
+                                <div>
+                                    <strong>Phone:</strong>
+                                    <span id="profile-phone">+91 9155892986</span>
+                                </div>
+                            </div>
+                            <div class="info-item">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <div>
+                                    <strong>Location:</strong>
+                                    <span>India</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="social-links">
+                        <a href="https://linkedin.com/in/yourprofile" id="linkedin-link" class="social-link" target="_blank">
+                            <i class="fab fa-linkedin"></i>
+                        </a>
+                        <a href="https://github.com/yourprofile" id="github-link" class="social-link" target="_blank">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <a href="https://yourwebsite.com" id="website-link" class="social-link" target="_blank">
+                            <i class="fas fa-globe"></i>
+                        </a>
+                        <a href="https://twitter.com/yourprofile" id="twitter-link" class="social-link" target="_blank">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="skills">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Technical Skills</h2>
+                <p class="section-subtitle">Technologies I work with</p>
+            </div>
+            <div class="skills-grid" id="skills-container">
+                <!-- Skills loaded dynamically -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="experience">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Work Experience</h2>
+                <p class="section-subtitle">My professional journey</p>
+            </div>
+            <div class="timeline" id="experience-container">
+                <!-- Experience loaded dynamically -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="projects">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Featured Projects</h2>
+                <p class="section-subtitle">Some of my recent work</p>
+            </div>
+            <div class="projects-grid" id="projects-container">
+                <!-- Projects loaded dynamically -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Certificates Section -->
+    <section id="certificates" class="certificates">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Certificates & Achievements</h2>
+                <p class="section-subtitle">My professional certifications</p>
+            </div>
+            <div class="certificates-grid" id="certificates-container">
+                <!-- Certificates loaded dynamically -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Education Section -->
+    <section id="education" class="education">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Education</h2>
+                <p class="section-subtitle">My academic background</p>
+            </div>
+            <div class="education-grid" id="education-container">
+                <!-- Education loaded dynamically -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Get In Touch</h2>
+                <p class="section-subtitle">Let's work together</p>
+            </div>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <div class="contact-card">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h3>Email</h3>
+                            <p id="contact-email">queryankit93@gmail.com</p>
+                            <a href="mailto:queryankit93@gmail.com" class="contact-link">Send Email</a>
+                        </div>
+                    </div>
+                    <div class="contact-card">
+                        <div class="contact-icon">
+                            <i class="fas fa-phone"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h3>Phone</h3>
+                            <p id="contact-phone">+91 9155892986</p>
+                            <a href="tel:+919155892986" class="contact-link">Call Now</a>
+                        </div>
+                    </div>
+                    <div class="contact-card">
+                        <div class="contact-icon">
+                            <i class="fab fa-whatsapp"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h3>WhatsApp</h3>
+                            <p>Quick chat available</p>
+                            <a href="https://wa.me/919155892986" class="contact-link" target="_blank">Start Chat</a>
+                        </div>
+                    </div>
+                    <div class="contact-card">
+                        <div class="contact-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h3>Location</h3>
+                            <p>India</p>
+                            <a href="#" class="contact-link">View on Map</a>
+                        </div>
+                    </div>
+                </div>
+                <form class="contact-form" id="contact-form" action="https://formspree.io/f/xnngwown" method="POST">
+                    <div class="form-group">
+                         <input type="text" name="name" placeholder="Your Name" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" name="email" placeholder="Your Email" required>
+                    </div>
+                    <div class="form-group">
+                         <input type="text" name="subject" placeholder="Subject" required>
+                    </div>
+                    <div class="form-group">
+                        <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
+                    </div>
+                    <input type="hidden" name="_subject" value="New Portfolio Contact Message">
+                    <input type="hidden" name="_replyto" value="queryankit93@gmail.com">
+                    <button type="submit" class="btn btn-primary">
+                        <i class="fas fa-paper-plane"></i> Send Message
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-info">
+                    <div class="footer-logo">
+                        <i class="fas fa-code"></i>
+                        <span>Ankit Kumar Singh</span>
+                    </div>
+                    <p>Full Stack Developer passionate about creating amazing digital experiences.</p>
+                    <div class="footer-social">
+                        <a href="https://www.linkedin.com/in/ankit-kumar-54658b34b/" class="social-link"><i class="fab fa-linkedin"></i></a>
+                        <a href="https://github.com/Dada09898" class="social-link"><i class="fab fa-github"></i></a>
+                        <a href="https://twitter.com/yourprofile" class="social-link"><i class="fab fa-twitter"></i></a>
+                        <a href="https://instagram.com/yourprofile" class="social-link"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                <div class="footer-links">
+                    <h3>Quick Links</h3>
+                    <a href="#home">Home</a>
+                    <a href="#about">About</a>
+                    <a href="#projects">Projects</a>
+                    <a href="#contact">Contact</a>
+                </div>
+                <div class="footer-links">
+                    <h3>Services</h3>
+                    <a href="#">Web Development</a>
+                    <a href="#">Mobile Apps</a>
+                    <a href="#">UI/UX Design</a>
+                    <a href="#">Consulting</a>
+                </div>
+                <div class="footer-newsletter">
+                    <h3>Newsletter</h3>
+                    <p>Subscribe to get updates on new projects and articles.</p>
+                    <form class="newsletter-form">
+                        <input type="email" placeholder="Enter your email">
+                        <button type="submit"><i class="fas fa-paper-plane"></i></button>
+                    </form>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Ankit Kumar Singh. All rights reserved.</p>
+                <div class="footer-legal">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button class="back-to-top" id="backToTop">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+        <!-- Chatbot Widget -->
+    <div class="chatbot-container" id="chatbotWidget">
+        <div class="chatbot-header">
+            <div class="chatbot-title">
+                <i class="fas fa-robot"></i>
+                <span>Ankit kumar Portfolio Assistant</span>
+            </div>
+            <button class="chatbot-close" id="chatbotClose">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        <div class="chatbot-messages" id="chatbotMessages">
+            <!-- Messages will be loaded here -->
+        </div>
+        <div class="chatbot-input">
+            <input type="text" id="chatbotInput" placeholder="Type your message...">
+            <button id="chatbotSend">
+                <i class="fas fa-paper-plane"></i>
+            </button>
+        </div>
+    </div>
+
+    <!-- WhatsApp Widget -->
+    <div class="whatsapp-chat" id="whatsappWidget">
+        <div class="whatsapp-header">
+            <div class="whatsapp-title">
+                <i class="fab fa-whatsapp"></i>
+                <span>WhatsApp Chat</span>
+            </div>
+            <button class="whatsapp-close" id="whatsappClose">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        <div class="whatsapp-messages" id="whatsappMessages">
+            <!-- WhatsApp messages will be loaded here -->
+        </div>
+        <div class="whatsapp-input">
+            <input type="text" id="whatsappInput" placeholder="Type your message...">
+            <button id="whatsappSend">
+                <i class="fab fa-whatsapp"></i> Send
+            </button>
+        </div>
+    </div>
+
+    <!-- Chatbot Toggle -->
+    <button class="chatbot-toggle" id="chatbotToggle">
+        <i class="fas fa-robot"></i>
+    </button>
+
+    <!-- WhatsApp Toggle -->
+    <button class="whatsapp-toggle" id="whatsappToggle">
+        <i class="fab fa-whatsapp"></i>
+    </button>
+
+    <!-- Scripts -->
+    <script src="js/data-manager.js"></script>
+    <script src="js/ai-integration.js"></script>
+    <script src="js/chatbot.js"></script>
+    <script src="js/animations.js"></script>
+    <script src="js/script.js"></script>
+    
+    <!-- Notification Container for Homepage -->
+    <div id="notification-container" class="notification-container"></div>
+
+    <!-- Add this before </body> tag -->
+<script>
+
+  
+
+// Notification functions for WhatsApp and Email
+async function sendNotification(type, data) {
+    try {
+        // Create the request data without spread operator
+        const requestData = {
+            name: data.name,
+            email: data.email,
+            phone: data.phone || 'not-provided',
+            subject: data.subject || 'No Subject',
+            message: data.message,
+            userPhone: '919155892986' // Your WhatsApp number
+        };
+
+        const response = await fetch('http://localhost:3000/api/' + type + '-notification', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(requestData)
+        });
+        
+        const result = await response.json();
+        console.log('Notification sent:', result);
+        return result;
+    } catch (error) {
+        console.error('Notification error:', error);
+        return { success: false, error: error.message };
+    }
+}
+
+// Show notification on page
+function showNotification(message, type = 'success') {
+    const notification = document.createElement('div');
+    notification.className = 'notification ' + type;
+    notification.innerHTML = 
+        '<i class="fas fa-' + (type === 'success' ? 'check' : 'exclamation') + '"></i>' +
+        '<span>' + message + '</span>';
+    
+    const container = document.getElementById('notification-container') || createNotificationContainer();
+    container.appendChild(notification);
+    
+    setTimeout(function() {
+        notification.remove();
+    }, 5000);
+}
+
+function createNotificationContainer() {
+    const container = document.createElement('div');
+    container.id = 'notification-container';
+    container.className = 'notification-container';
+    document.body.appendChild(container);
+    return container;
+}
+
+// Contact Form Handler
+document.addEventListener('DOMContentLoaded', function() {
+    const contactForm = document.getElementById('contact-form');
+    if (contactForm) {
+        contactForm.addEventListener('submit', async function(e) {
+            e.preventDefault();
+            
+            const formData = {
+                name: this.querySelector('input[name="name"]').value,
+                email: this.querySelector('input[name="email"]').value,
+                subject: this.querySelector('input[name="subject"]').value,
+                message: this.querySelector('textarea[name="message"]').value
+            };
+            
+            const submitBtn = this.querySelector('button[type="submit"]');
+            const originalText = submitBtn.innerHTML;
+            
+            // Show loading
+            submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
+            submitBtn.disabled = true;
+            
+            try {
+                const result = await sendNotification('contact', formData);
+                
+                if (result.success) {
+                    showNotification('Message sent successfully! I will get back to you soon.');
+                    this.reset(); // Clear form
+                } else {
+                    showNotification('Failed to send message. Please try again.', 'error');
+                }
+            } catch (error) {
+                showNotification('Network error. Please check your connection.', 'error');
+            } finally {
+                submitBtn.innerHTML = originalText;
+                submitBtn.disabled = false;
+            }
+        });
+    }
+
+    // WhatsApp Widget Handler
+    const whatsappSend = document.getElementById('whatsappSend');
+    const whatsappInput = document.getElementById('whatsappInput');
+    
+    if (whatsappSend && whatsappInput) {
+        whatsappSend.addEventListener('click', async function() {
+            const message = whatsappInput.value.trim();
+            if (!message) return;
+            
+            const formData = {
+                name: 'Website Visitor',
+                email: 'not-provided@website.com',
+                phone: 'not-provided',
+                message: message
+            };
+            
+            // Show sending state
+            const originalHtml = this.innerHTML;
+            this.innerHTML = '<i class="fas fa-spinner fa-spin"></i>';
+            this.disabled = true;
+            
+            try {
+                const result = await sendNotification('chat', formData);
+                
+                if (result.success) {
+                    whatsappInput.value = '';
+                    showNotification('Message sent via WhatsApp! I will reply soon.');
+                } else {
+                    showNotification('Failed to send WhatsApp message.', 'error');
+                }
+            } catch (error) {
+                showNotification('Network error. Please try again.', 'error');
+            } finally {
+                this.innerHTML = originalHtml;
+                this.disabled = false;
+            }
+        });
+
+        // Allow Enter key to send message
+        whatsappInput.addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') {
+                whatsappSend.click();
+            }
+        });
+    }
+
+    // Chatbot Handler (if you want to add it too)
+    const chatbotSend = document.getElementById('chatbotSend');
+    const chatbotInput = document.getElementById('chatbotInput');
+    
+    if (chatbotSend && chatbotInput) {
+        chatbotSend.addEventListener('click', async function() {
+            const message = chatbotInput.value.trim();
+            if (!message) return;
+            
+            const formData = {
+                name: 'Website Visitor', 
+                email: 'not-provided@website.com',
+                phone: 'not-provided',
+                message: 'Chatbot: ' + message
+            };
+            
+            const originalHtml = this.innerHTML;
+            this.innerHTML = '<i class="fas fa-spinner fa-spin"></i>';
+            this.disabled = true;
+            
+            try {
+                const result = await sendNotification('chat', formData);
+                
+                if (result.success) {
+                    chatbotInput.value = '';
+                    showNotification('Chat message sent!');
+                } else {
+                    showNotification('Failed to send chat message.', 'error');
+                }
+            } catch (error) {
+                showNotification('Network error. Please try again.', 'error');
+            } finally {
+                this.innerHTML = originalHtml;
+                this.disabled = false;
+            }
+        });
+    }
+});
+
+
+</script>
+</body>
+</html>

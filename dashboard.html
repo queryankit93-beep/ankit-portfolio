@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard | My Portfolio</title>
+    <link rel="stylesheet" href="css/dashboard.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/chatbot.css">
+    <link rel="stylesheet" href="css/resume.css">
+</head>
+<body>
+    <!-- Dashboard Layout -->
+    <div class="dashboard-container">
+        <!-- Sidebar -->
+        <div class="sidebar">
+            <div class="sidebar-header">
+                <div class="sidebar-logo">
+                    <i class="fas fa-user-tie"></i>
+                </div>
+                <div class="sidebar-title">My Portfolio</div>
+            </div>
+            
+            <div class="sidebar-menu">
+                <a href="#" class="menu-item active" data-section="overview">
+                    <div class="menu-icon">
+                        <i class="fas fa-chart-pie"></i>
+                    </div>
+                    <div class="menu-text">Overview</div>
+                </a>
+                
+                <a href="#" class="menu-item" data-section="profile">
+                    <div class="menu-icon">
+                        <i class="fas fa-user"></i>
+                    </div>
+                    <div class="menu-text">Profile</div>
+                </a>
+                
+                <a href="#" class="menu-item" data-section="experience">
+                    <div class="menu-icon">
+                        <i class="fas fa-briefcase"></i>
+                    </div>
+                    <div class="menu-text">Experience</div>
+                </a>
+                
+                <a href="#" class="menu-item" data-section="education">
+                    <div class="menu-icon">
+                        <i class="fas fa-graduation-cap"></i>
+                    </div>
+                    <div class="menu-text">Education</div>
+                </a>
+                
+                <a href="#" class="menu-item" data-section="skills">
+                    <div class="menu-icon">
+                        <i class="fas fa-code"></i>
+                    </div>
+                    <div class="menu-text">Skills</div>
+                </a>
+                
+                <a href="#" class="menu-item" data-section="certificates">
+                    <div class="menu-icon">
+                        <i class="fas fa-award"></i>
+                    </div>
+                    <div class="menu-text">Certificates</div>
+                </a>
+                
+                <!-- ADD RESUME MENU ITEM -->
+                <a href="#" class="menu-item" data-section="resume">
+                    <div class="menu-icon">
+                        <i class="fas fa-file-alt"></i>
+                    </div>
+                    <div class="menu-text">Resume</div>
+                </a>
+                
+                <a href="#" class="menu-item" data-section="projects">
+                    <div class="menu-icon">
+                        <i class="fas fa-project-diagram"></i>
+                    </div>
+                    <div class="menu-text">Projects</div>    
+                </a>
+
+                <a href="#" class="menu-item" data-section="about">
+                    <div class="menu-icon">
+                        <i class="fas fa-user-circle"></i>
+                    </div>
+                    <div class="menu-text">About Me</div>
+                </a>
+                <a href="#" class="menu-item" data-section="recruiter-settings">
+                    <div class="menu-icon">
+                        <i class="fas fa-user"></i>
+                    </div>
+                    <div class="menu-text">Recruiter Panel Settings</div>
+                </a>
+                
+                <a href="#" class="menu-item" data-section="settings">
+                    <div class="menu-icon">
+                        <i class="fas fa-cog"></i>
+                    </div>
+                    <div class="menu-text">Settings</div>
+                </a>
+                <a href="recruiter-view.html" class="menu-item" target="_blank">
+                    <div class="menu-icon">
+                         <i class="fas fa-eye"></i>
+                    </div>
+                    <div class="menu-text">Recruiter Panel</div>
+                </a>
+                <a href="portfolio-admin.html" class="menu-item">
+                    <div class="menu-icon">
+                         <i class="fas fa-upload"></i>
+                    </div>
+                    <div class="menu-text">File Manager</div>
+                </a>
+            </div>
+        </div>
+        
+        <!-- Main Content -->
+        <div class="main-content">
+            <!-- Top Header -->
+            <div class="top-header">
+                <div class="header-title" id="current-section-title">Dashboard Overview</div>
+                
+                <div class="user-menu">
+                    <button class="btn btn-primary" id="upload-resume-btn">
+                        <i class="fas fa-upload"></i> Upload Resume
+                    </button>
+                    <div class="user-avatar" id="user-avatar">JD</div>
+                    <div class="user-info">
+                        <div class="user-name" id="user-name">Ankit kumar singh</div>
+                        <div class="user-role">Administrator</div>
+                    </div>
+                    <button class="btn btn-secondary" id="logout-btn">
+                        <i class="fas fa-sign-out-alt"></i> Logout
+                    </button>
+                </div>
+            </div>
+            
+            <!-- Content Area -->
+            <div class="content-area">
+                <!-- Overview Section -->
+                <div id="overview-section" class="section-content">
+                    <!-- Content will be loaded by JavaScript -->
+                </div>
+                
+                <!-- Profile Section -->
+                <div id="profile-section" class="section-content" style="display: none;">
+                    <!-- Content will be loaded by JavaScript -->
+                </div>
+                
+                <!-- Experience Section -->
+                <div id="experience-section" class="section-content" style="display: none;">
+                    <!-- Content will be loaded by JavaScript -->
+                </div>
+                
+                <!-- Education Section -->
+                <div id="education-section" class="section-content" style="display: none;">
+                    <!-- Content will be loaded by JavaScript -->
+                </div>
+                
+                <!-- Skills Section -->
+                <div id="skills-section" class="section-content" style="display: none;">
+                    <!-- Content will be loaded by JavaScript -->
+                </div>
+                
+                <!-- Certificates Section -->
+                <div id="certificates-section" class="section-content" style="display: none;">
+                    <!-- Content will be loaded by JavaScript -->
+                </div>
+                
+                <!-- Resume Section -->
+                <div id="resume-section" class="section-content" style="display: none;">
+                    <!-- Content will be loaded by JavaScript -->
+                </div>
+                
+                <!-- Projects Section -->
+                <div id="projects-section" class="section-content" style="display: none;">
+                    <!-- Content will be loaded by JavaScript -->
+                </div>
+                
+                <!-- About Section -->
+                <div id="about-section" class="section-content" style="display: none;">
+                    <!-- Content will be loaded by JavaScript -->
+                </div>
+                
+                <!-- Recruiter Settings Section -->
+                <div id="recruiter-settings-section" class="section-content" style="display: none;">
+                    <!-- Content will be loaded by JavaScript -->
+                </div>
+                
+                <!-- Settings Section -->
+                <div id="settings-section" class="section-content" style="display: none;">
+                    <!-- Content will be loaded by JavaScript -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- UPLOAD RESUME MODAL -->
+    <div id="upload-resume-modal" class="modal" style="display: none;">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Upload Resume</h3>
+                <span class="close-modal">&times;</span>
+            </div>
+            <div class="modal-body">
+                <div class="upload-area" id="resume-upload-area">
+                    <i class="fas fa-cloud-upload-alt"></i>
+                    <p>Drag & drop your resume here or click to browse</p>
+                    <input type="file" id="resume-file" accept=".pdf,.doc,.docx,.txt" style="display: none;">
+                    <button class="btn btn-primary" id="browse-resume-btn">Browse Files</button>
+                </div>
+                <div class="file-info" id="file-info" style="display: none;">
+                    <p><strong>Selected file:</strong> <span id="file-name"></span></p>
+                    <p><strong>File size:</strong> <span id="file-size"></span></p>
+                </div>
+                <div class="upload-progress" id="upload-progress" style="display: none;">
+                    <div class="progress-bar">
+                        <div class="progress" id="progress-fill"></div>
+                    </div>
+                    <p id="progress-text">Uploading...</p>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-secondary" id="cancel-upload-btn">Cancel</button>
+                <button class="btn btn-primary" id="confirm-upload-btn" disabled>Upload Resume</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- VIEW RESUME MODAL -->
+    <div id="view-resume-modal" class="modal" style="display: none;">
+        <div class="modal-content large-modal">
+            <div class="modal-header">
+                <h3>Resume Preview</h3>
+                <span class="close-modal">&times;</span>
+            </div>
+            <div class="modal-body">
+                <div id="resume-preview-content">
+                    <iframe id="resume-iframe" style="width: 100%; height: 600px; border: none; display: none;"></iframe>
+                    <div id="no-resume-message" style="display: none; text-align: center; padding: 40px;">
+                        <i class="fas fa-file-alt" style="font-size: 48px; color: #6c757d; margin-bottom: 20px;"></i>
+                        <h3>No Resume Available</h3>
+                        <p>Please upload a resume to view it here.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-secondary" id="close-viewer-btn">Close</button>
+                <button class="btn btn-primary" id="download-from-viewer-btn">Download</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- EDIT RESUME DETAILS MODAL -->
+    <div id="edit-resume-modal" class="modal" style="display: none;">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Edit Resume Details</h3>
+                <span class="close-modal">&times;</span>
+            </div>
+            <div class="modal-body">
+                <form id="edit-resume-form">
+                    <div class="form-group">
+                        <label for="resume-title">Resume Title</label>
+                        <input type="text" id="resume-title" class="form-control" placeholder="e.g., Senior Developer Resume">
+                    </div>
+                    <div class="form-group">
+                        <label for="resume-summary">Professional Summary</label>
+                        <textarea id="resume-summary" class="form-control" rows="4" placeholder="Brief professional summary..."></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="resume-version">Version</label>
+                        <input type="text" id="resume-version" class="form-control" placeholder="e.g., v2.1">
+                    </div>
+                    <div class="form-group">
+                        <label for="resume-visibility">Visibility</label>
+                        <select id="resume-visibility" class="form-control">
+                            <option value="public">Public</option>
+                            <option value="private">Private</option>
+                        </select>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-secondary" id="cancel-edit-resume-btn">Cancel</button>
+                <button class="btn btn-primary" id="save-resume-details-btn">Save Details</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- NOTIFICATION CONTAINER -->
+    <div id="notification-container" class="notification-container"></div>
+
+   <!-- Add these scripts in the CORRECT ORDER -->
+    <script src="js/ai-integration.js"></script>
+    <script src="js/chatbot.js"></script>
+    <script src="js/data-manager.js"></script>
+    <script src="js/resume-manager.js"></script>
+    <script src="js/dashboard.js"></script>
+<!-- recruiter-panel.js is not needed in dashboard -->
+</body>
+</html>
