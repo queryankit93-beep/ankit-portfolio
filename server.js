@@ -9,23 +9,32 @@ const path = require('path');
 const app = express();
 const PORT = process.env.PORT || 10000;
 
-// Middleware
+// Middleware - Serve static files FIRST
+app.use(express.static(path.join(__dirname)));
 app.use(bodyParser.json());
 app.use(cors());
 
-// Serve static files (CSS, JS, images)
-app.use(express.static(path.join(__dirname)));
-
-// WhatsApp Client Setup
+// WhatsApp Client Setup with PERSISTENT session
 const client = new Client({
-    authStrategy: new LocalAuth(),
+    authStrategy: new LocalAuth({
+        clientId: "ankit-portfolio-client"  // Persistent session
+    }),
     puppeteer: {
         headless: true,
-        args: ['--no-sandbox', '--disable-setuid-sandbox']
+        args: [
+            '--no-sandbox',
+            '--disable-setuid-sandbox',
+            '--disable-dev-shm-usage',
+            '--disable-accelerated-2d-canvas',
+            '--no-first-run',
+            '--no-zygote',
+            '--single-process',
+            '--disable-gpu'
+        ]
     }
 });
 
-// Generate QR Code for WhatsApp
+// WhatsApp Event Handlers
 client.on('qr', (qr) => {
     console.log('📱 Scan this QR code with your WhatsApp:');
     qrcode.generate(qr, { small: true });
@@ -36,20 +45,25 @@ client.on('ready', () => {
 });
 
 client.on('authenticated', () => {
-    console.log('✅ WhatsApp authenticated!');
+    console.log('✅ WhatsApp authenticated - Session saved!');
 });
 
 client.on('auth_failure', msg => {
     console.error('❌ WhatsApp authentication failed:', msg);
 });
 
+client.on('disconnected', (reason) => {
+    console.log('❌ WhatsApp disconnected:', reason);
+});
+
+// Initialize WhatsApp
 client.initialize();
 
 // Email transporter setup
 const emailTransporter = nodemailer.createTransport({
     service: 'gmail',
     auth: {
-        user: process.env.GMAIL_USER || 'your-email@gmail.com',
+        user: process.env.GMAIL_USER || 'queryankit93@gmail.com',
         pass: process.env.GMAIL_PASS || 'your-app-password'
     }
 });
@@ -95,14 +109,23 @@ app.post('/api/chat-notification', async (req, res) => {
     const emailMessage = `New chat message received:\n\nName: ${name}\nEmail: ${email}\nPhone: ${phone}\nMessage: ${message}\n\nTime: ${new Date().toLocaleString()}`;
 
     try {
+        // Send WhatsApp notification
         if (userPhone) {
             await sendWhatsAppNotification(userPhone, whatsappMessage);
         }
+        
+        // Send email notification
         await sendEmailNotification(emailSubject, emailMessage);
         
-        res.json({ success: true, message: 'Notifications sent successfully!' });
+        res.json({ 
+            success: true, 
+            message: 'Notifications sent successfully!' 
+        });
     } catch (error) {
-        res.status(500).json({ success: false, error: error.message });
+        res.status(500).json({ 
+            success: false, 
+            error: error.message 
+        });
     }
 });
 
@@ -127,7 +150,7 @@ app.post('/api/contact-notification', async (req, res) => {
     }
 });
 
-// Health check route (keep this)
+// Health check route - ONLY for /api/status
 app.get('/api/status', (req, res) => {
     res.json({ 
         status: 'Server is running!', 
@@ -135,13 +158,20 @@ app.get('/api/status', (req, res) => {
     });
 });
 
-// Serve index.html for all other routes
+// Serve index.html for ALL other routes
 app.get('*', (req, res) => {
     res.sendFile(path.join(__dirname, 'index.html'));
 });
 
 // Start server
-app.listen(PORT, () => {
+app.listen(PORT, '0.0.0.0', () => {
     console.log(`🚀 Server running on port ${PORT}`);
-    console.log(`📍 Portfolio live at: https://www.kumarankit.space`);
+    console.log(`📍 Portfolio: https://www.kumarankit.space`);
+    console.log(`📍 API Status: https://www.kumarankit.space/api/status`);
+});
+
+// Handle graceful shutdown
+process.on('SIGTERM', () => {
+    console.log('🛑 Server shutting down gracefully');
+    process.exit(0);
 });
